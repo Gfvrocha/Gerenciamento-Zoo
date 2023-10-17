@@ -20,6 +20,8 @@ public class Ave extends Animal {
         scanner.nextLine();
         System.out.println("Informe o sexo { M - F }: ");
         super.setSexo(scanner.nextLine());
+        System.out.println("Abto aliemntar de " + getNome() + ": ");
+        super.setAbtoAlimentar(scanner.nextLine());
         System.out.println("Informe o ID: ");
         super.setId(scanner.nextInt());
         scanner.nextLine();
@@ -32,7 +34,7 @@ public class Ave extends Animal {
     }
 
     public void listarAve(){
-        System.out.println("=0=0= ---| Lista de Repteis |--- =0=0=");
+        System.out.println("=0=0= ---| Lista de Aves |--- =0=0=");
         for (Ave ave : listAve){
             System.out.println("Nome: "+ ave.getNome());
             System.out.println("Id: "+ ave.getId());

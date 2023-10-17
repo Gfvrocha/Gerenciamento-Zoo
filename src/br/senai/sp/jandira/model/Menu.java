@@ -9,6 +9,9 @@ public class Menu {
     Ave refListAve = new Ave();
     Mamifero refListMamifero = new Mamifero();
 
+    Animal refListAnimal = new Animal();
+    Animal animal = new Animal();
+
     public void iniciarMenu(){
 
         boolean sair = true;
@@ -38,9 +41,11 @@ public class Menu {
             switch (escolhaUsuario){
 
                 case 1:
+
                     Reptil reptil = new Reptil();
                     reptil.cadastrarReptil();
                     refListReptil.adicionarReptil(reptil);
+                    refListAnimal.adicionarAnimal(reptil);
                     reptil.listarReptil();
                     break;
 
@@ -48,12 +53,14 @@ public class Menu {
                     Ave ave = new Ave();
                     ave.cadastrarAve();
                     refListAve.adicionarAve(ave);
+                    refListAnimal.adicionarAnimal(ave);
                     break;
 
                 case 3:
                     Mamifero mamifero = new Mamifero();
                     mamifero.cadastrarMamifero();
                     refListMamifero.adicionarMamifero(mamifero);
+                    refListAnimal.adicionarAnimal(mamifero);
                     break;
 
                 case 4:
@@ -76,23 +83,27 @@ public class Menu {
                     boolean validaAnimal = false;
 
                     if (animalPesquisado != null && animalPesquisado != "") {
-                        validaAnimal = refListA.pesquisarVeiculo(veiculoPesquisado);
+                        validaAnimal = refListMamifero.pesquisarMamifero(animalPesquisado);
+
                     }
 
-                    if (validaVeiculo){
-                        System.out.println("Veiculo Disponivel para Compra !!");
+                    if (validaAnimal){
+                        System.out.println("Informações do animal: ");
+                        System.out.println();
                     } else {
-                        System.out.println("Veiculo Indisponivel !!");
+                        System.out.println("Animal inexistente em nosso Zoo");
                     }
 
 
                     break;
 
 
-                break;
-
                 case 8:
                     sair = false;
+                    break;
+
+                case 9:
+                    refListAnimal.listarAnimal();
                     break;
 
 

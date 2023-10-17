@@ -19,6 +19,8 @@ public class Mamifero extends Animal {
         scanner.nextLine();
         System.out.println("Informe o sexo { M - F }: ");
         super.setSexo(scanner.nextLine());
+        System.out.println("Abto aliemntar de " + getNome() + ": ");
+        super.setAbtoAlimentar(scanner.nextLine());
         System.out.println("Informe o ID: ");
         super.setId(scanner.nextInt());
         scanner.nextLine();
@@ -31,13 +33,22 @@ public class Mamifero extends Animal {
     }
 
     public void listarMamifero(){
-        System.out.println("=0=0= ---| Lista de Repteis |--- =0=0=");
+        System.out.println("=0=0= ---| Lista de Mamiferos |--- =0=0=");
         for (Mamifero mamifero : listMamifero){
             System.out.println("Nome: "+ mamifero.getNome());
             System.out.println("Id: "+ mamifero.getId());
             System.out.println(mamifero.getNome() + ", alocado no alojamento dos repteis.");
         }
         System.out.println("=0=0= ----||---- =0=0= ----||---- =0=0=\n");
+    }
+
+    public boolean pesquisarMamifero(String mamiferoPesquisado){
+        for (Mamifero mamifero : listMamifero){
+            if (mamifero.getNome().equalsIgnoreCase(mamiferoPesquisado)){
+                return true;
+            }
+        }
+        return false;
     }
 
 

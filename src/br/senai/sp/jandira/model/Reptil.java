@@ -21,6 +21,8 @@ public class Reptil extends Animal {
         scanner.nextLine();
         System.out.println("Informe o sexo { M - F }: ");
         super.setSexo(scanner.nextLine());
+        System.out.println("Abto aliemntar de " + getNome() + ": ");
+        super.setAbtoAlimentar(scanner.nextLine());
         System.out.println("Informe o ID: ");
         super.setId(scanner.nextInt());
         scanner.nextLine();
